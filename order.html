@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/jquery-ui.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=PT+Mono&family=Pacifico&family=Seaweed+Script&display=swap');
+body{
+	background-color: #F0F8FF;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "bilbo-swash-caps";
+	scroll-behavior: smooth;
+}
+header{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 100px;
+	z-index: 10000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.5s;
+}
+
+header.sticky{
+	background-color: white;
+	padding: 10px 100px;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+header .logo{
+	color: black;
+	font-weight: bolder;
+	font-size: 2em;
+	text-decoration: none;
+}
+header.sticky .logo{
+	color: black;
+}
+header .logo span{
+	color: #ff0157;
+}
+header .navigation{
+	position: relative;
+	display: flex;
+}
+header .navigation li{
+	list-style: none;
+	margin-left: 30px;
+}
+header .navigation li a{
+	text-decoration: none;
+	color: black;
+	font-weight: bolder;
+	font-family: 'PT Mono', monospace;
+}
+header.sticky .navigation li a{
+	color: black;
+}
+header.sticky .navigation li a:hover{
+	color: #cc9900;
+}
+/*button icon*/
+.ul{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	margin-top: 100px;
+	padding: 0;
+	display: flex;
+}
+.ul .li{
+	list-style: none;
+}
+.ul .li .a{
+	display: block;
+	position: relative;
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+	font-size: 40px;
+	text-align: center;
+	text-decoration: none;
+	color: #404040;
+	margin: 0 30px;
+	transition: .5s;
+}
+.ul .li .a span{
+	position: absolute;
+	transition:transform .5s;
+}
+.ul .li .a span:nth-child(1),
+.ul .li .a span:nth-child(3){
+	width: 100%;
+	height: 3px;
+	background-origin: #404040;
+}
+.ul .li .a span:nth-child(1){
+	top: 0;
+	left: 0;
+	transform-origin: right;
+}
+.ul .li .a:hover span:nth-child(1){
+	transform:scaleX(0);
+	transform-origin: left;
+	transition:transform .5s;
+}
+
+.ul .li .a span:nth-child(3){
+	bottom: 0;
+	left: 0;
+	transform-origin: left;
+}
+.ul .li .a:hover span:nth-child(3){
+	transform: scaleX(0);
+	transform-origin: right;
+	transition:transform .5s;
+}
+
+.ul .li .a span:nth-child(2),
+.ul .li .a span:nth-child(4){
+	width: 3px;
+	height: 100%;
+	background: #404040;
+}
+.ul .li .a span:nth-child(2){
+	top: 0;
+	left: 0;
+	transform: scale(0);
+	transform-origin: bottom;
+}
+.ul .li .a:hover span:nth-child(2){
+	transform: scale(1)
+	transform-origin: top;
+	transition: transform .5s;
+}
+.ul .li .a span:nth-child(4){
+	top: 0;
+	right: 0;
+	transform:scale(0);
+	transform-origin: top;
+}
+.ul .li .a:hover span:nth-child(4){
+	transform:scale(1);
+	transform-origin: bottom;
+	transition:transform .5s;
+}
+
+.phone:hover{
+	color: #3b5998;
+}
+.phone:hover span{
+	background: #3b5998;
+}
+.twitter:hover{
+	color: #1da1f2;
+}
+.twitter:hover span{
+	background: #1da1f2;
+}
+.instagram:hover{
+	color: #c32aa3;
+}
+.instagram:hover span{
+	background: #c32aa3;
+}
+.address:hover{
+	color: #dd4b39;
+}
+.address:hover span{
+	background: #dd4b39;
+}
+.ul .li .a .twitter{
+	color: #1da1f2;
+}
+.ul .li .a:hover:nth-child(3){
+	color: #c32aa3;
+}
+.ul .li .a:hover:nth-child(4){
+	color: #dd4b39;
+}
+	h1,p{
+		text-align: center;
+		margin-top: 100px;
+	}
+	@media screen and (max-width: 768px){
+	#primary{width: 100%;}
+	#secondary{width: 100%; margin: 0; border: none;}
+	header,
+	header.sticky{
+		padding: 10px 20px;
+	}
+	header .navigation{
+		display: flex;
+	}
+}
+</style>
+	<title>Bakery Shop</title>
+</head>
+<body>
+<header class="sticky">
+		<a href="home.html" class="logo">Bakery Shop<span><img src="images/logoo.png" width="10%" align="left">.</span></a>
+		<ul class="navigation">
+			<li><a href="home.html">Home</a></li>
+			<li><a href="cake.html">Cake</a></li>
+			<li><a href="bread.html">Bread</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="team.html">Teams</a></li>
+			<li><a href="order.html">Order</a></li>
+			<li><a class="nav-link" href="contact.html">Contact</a></li>
+		</ul>
+</header>
+<ul class="ul">
+	<li class="li">
+		<a class="a phone" href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<i class="fa fa-phone" aria-hidden="true"></i>
+		</a>
+	</li>
+	<li class="li">
+		<a class="a twitter" href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<i class="fa fa-twitter" aria-hidden="true"></i>
+		</a>
+	</li>
+	<li class="li">
+		<a class="a instagram" href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<i class="fa fa-instagram" aria-hidden="true"></i>
+		</a>
+	</li>
+	<li class="li">
+		<a class="a address" href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<i class="fa fa-address-card" aria-hidden="true"></i>
+		</a>
+	</li>
+</ul>
+<center><h1>HOW TO ORDER?</h1>
+<p>Teruntuk kamu yang ingin order kue dan roti dari BAKERY SHOP dan bertanya-tanya lebih, bisa langsung menghubungi kontak dibawah ini. <br>Selamat berbelanja</p>
+</center>
+</body>
+</html>

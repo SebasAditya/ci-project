@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="css/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=PT+Mono&family=Pacifico&family=Seaweed+Script&display=swap');
+body{
+	background-color: #F0F8FF;
+}
+/*navbar*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+	font-family: "bilbo-swash-caps";
+	scroll-behavior: smooth;
+}
+header{
+	margin: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 100px;
+	z-index: 10000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.5s;
+}
+
+header.sticky{
+	background-color: white;
+	padding: 10px 100px;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+header .logo{
+	color: black;
+	font-weight: bolder;
+	font-size: 2em;
+	text-decoration: none;
+}
+header.sticky .logo{
+	color: black;
+}
+header .logo span{
+	color: #ff0157;
+}
+header .navigation{
+	position: relative;
+	display: flex;
+}
+header .navigation li{
+	list-style: none;
+	margin-left: 30px;
+}
+header .navigation li a{
+	text-decoration: none;
+	color: black;
+	font-weight: bolder;
+	font-family: 'PT Mono', monospace;
+}
+header.sticky .navigation li a{
+	color: black;
+}
+header.sticky .navigation li a:hover{
+	color: #cc9900;
+}
+h1{
+	color: black;
+	font-size: 70px;
+	margin-top: 150px;
+}
+/*side by side image*/
+*{
+	box-sizing: border-box;
+}
+
+.column{
+	float: left;
+	width: 30%;
+	padding: 5px;
+}
+.row{
+	margin-top: 100px;
+	margin-left: 100px;
+}
+.row1{
+	margin: 0px;
+	margin-left: 100px;
+}
+.row::after{
+	content: "";
+	clear: both;
+	display: table;
+}
+/*image overlay fade*/
+.container{
+	position:relative;
+	width: 100%;
+}
+.overlay{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: 0.5s ease;
+	background-color: #272727;
+}
+
+.container:hover .overlay{
+	opacity: 0.6;
+}
+
+.text{
+	font-size: 45px;
+	color: white;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+	@media screen and (max-width: 768px) {
+		.column{
+			width: 100%;
+		}
+	}
+	@media screen and (max-width: 768px) {
+		#primary{width: 100%;}
+		#secondary{width: 100%; margin: 0; border: none;}
+		header,
+		header.sticky{
+			padding: 10px 20px;
+		}
+		header .navigation{
+			display: flex;
+		}
+	}
+</style>
+	<title>Bakery Shop</title>
+</head>
+<body>
+<header class="sticky">
+		<a href="home.html" class="logo">Bakery Shop<span><img src="images/logoo.png" width="10%" align="left">.</span></a>
+		<ul class="navigation">
+			<li><a href="home.html">Home</a></li>
+			<li><a href="cake.html">Cake</a></li>
+			<li><a href="bread.html">Bread</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="team.html">Teams</a></li>
+			<li><a href="order.html">Order</a></li>
+			<li><a class="nav-link" href="contact.html">Contact</a></li>
+		</ul>
+</header>
+	<h1><center>OUR BREADS</center></h1>
+<div class="row">
+	<div class="column">
+		<div class="container">
+		<img src="images/muerto.jpg" alt="muerto" style="width: 100%">
+		<div class="overlay">
+		<div class="text" style="font-size: 30px">PAN DE MUERTO <br>Rp.300.000</div>
+		</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="container">
+		<img src="images/pirojki.jpg" alt="pirojki" style="width: 100%">
+		<div class="overlay">
+		<div class="text" style="font-size: 30px">PIROJKI <br>Rp.32.500</div>
+		</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="container">
+		<img src="images/zopf.jpg" alt="zopf" style="width: 100%">
+		<div class="overlay">
+		<div class="text" style="font-size: 30px">ZOPF <br>Rp.90.000</div>
+		</div>
+		</div>
+	</div>
+</div>
+<div class="row1">
+	<div class="column">
+		<div class="container">
+		<img src="images/pao.jpg" alt="pao" style="width: 100%">
+		<div class="overlay">
+		<div class="text" style="font-size: 30px">PAO DE QUEIJO <br>Rp.7.000</div>
+		</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="container">
+		<img src="images/melonpan.jpg" alt="melonpan" style="width: 100%">
+		<div class="overlay">
+		<div class="text" style="font-size: 30px">MELON PAN <br>Rp.39.000</div>	
+		</div>	
+		</div>
+	</div>
+	<div class="column">
+		<div class="container">
+		<img src="images/pretzel.jpg" alt="pretzel" style="width: 100%">
+		<div class="overlay">
+		<div class="text" style="font-size: 30px">PRETZEL <br>Rp.25.000</div>	
+		</div>	
+		</div>
+	</div>
+</div>
+<div class="row1">
+	<div class="column">
+		<div class="container">
+		<img src="images/naan.jpg" alt="naan" style="width: 100%">
+		<div class="overlay">
+		<div class="text" style="font-size: 30px">NAAN <br>Rp.30.000</div>
+		</div>
+		</div>
+	</div>
+	<div class="column">
+		<div class="container">
+		<img src="images/tapalapa.jpg" alt="tapalapa" style="width: 100%">
+		<div class="overlay">
+		<div class="text" style="font-size: 30px">TAPALAPA <br>Rp.35.000</div>	
+		</div>	
+		</div>
+	</div>
+	<div class="column">
+		<div class="container">
+		<img src="images/gyeran.jpg" alt="gyeran" style="width: 100%">
+		<div class="overlay">
+		<div class="text" style="font-size: 30px">GYERANPPANG <br>Rp.23.000</div>	
+		</div>	
+		</div>
+	</div>
+</div>
+	<title>Bakery Shop</title>
+</head>
+<body>
+
+</body>
+</html>
